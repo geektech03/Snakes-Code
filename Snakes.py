@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import pygame
 import random
 import os
@@ -32,6 +34,8 @@ puimg = pygame.image.load("pause.jpg")
 puimg = pygame.transform.scale(puimg, (screen_width, screen_height)).convert_alpha()
 
 snkimg = pygame.image.load("Snake.png")
+
+food = pygame.image.load("food.png")
 
 # Game Title
 pygame.display.set_caption("Snakes")
@@ -133,7 +137,6 @@ def gameloop():
         Hi_Score = HScore.read()
     food_x = random.randint(20, screen_width - 20)
     food_y = random.randint(20, screen_height - 20)
-    food_size = 10
     score = 0
     init_velocity = 3
     snake_size = 15
@@ -225,15 +228,9 @@ def gameloop():
                     score += 10
 
                 if F2_pressed == True and F3_pressed == True:
-                    food_size += 5
-
-                if F3_pressed == True and F4_pressed == True:
-                    food_size -= 5
-
-                if F1_pressed == True and F3_pressed == True:
                     absv += 5
 
-                if F2_pressed == True and F4_pressed == True:
+                if F3_pressed == True and F4_pressed == True:
                     absv -= 5
 
             snake_x = snake_x + velocity_x
@@ -250,7 +247,7 @@ def gameloop():
                     Hi_Score = score
 
             gameWindow.blit(pgimg , (0 , 0))
-            pygame.draw.rect(gameWindow, red, [food_x, food_y, food_size, food_size])
+            gameWindow.blit(food, (food_x, food_y))
 
             head = []
             head.append(snake_x)

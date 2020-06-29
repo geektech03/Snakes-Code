@@ -1,11 +1,17 @@
 # Snakes-Code
-Please Don't deleat any file.
-Download everything and then run.
-Excess use of cheat codes can even destroy game in which you are gonna beat high score.
+Don't delete any file and keep the files in one folder.
+Download everything and then run the code with python.
+Excess use of cheat codes can even cause glitch in the game.
 
 # Requirments
 Python
 Python IDE
 
+# Python Modules
+Pygame
+Tkinter
+Random
+os
+
 # Bugs
-Any bugs please report at root362003@gmail.com
+Any bugs please report at root03062003@gmail.com
